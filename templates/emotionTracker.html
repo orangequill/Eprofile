@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+         <link rel="stylesheet" href="/Repositories/EProfile/Styles/surveyStyle.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+        <script type="text/javascript" src="/Repositories/EProfile/Scripts/slider.js"></script>
+        <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    </head>
+    <body>        
+        <header class="navbar navbar-default">
+            <div class="container-fluid">
+              <ul class="nav navbar-nav">
+                <li>
+                    <a class="nav-link " href="/">Home</a>
+                </li>         
+                <li class="dropdown">
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">Survey<span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                      <li><a href="/Repositories/EProfile/templates/educatorSurvey.html">Educator</a></li>
+                      <li><a href="/Repositories/EProfile/templates/studentSurvey.html">Student Assessment</a></li>
+                      <li><a href="/Repositories/EProfile/templates/peerSurvey.html">Peer Assessment</a></li>
+                    </ul>
+                  </li>                                       
+                <li>
+                  <a class="nav-link " href="/">Calendar</a>
+                </li>
+                <li>
+                  <a class="nav-link" href="/">Reporting</a>
+                </li>
+                <li>
+                  <a class="nav-link" href="/Repositories/EProfile/templates/Profile.html">Profile</a>
+                </li>
+              </ul> 
+            </div>
+        </header>
+        <div class="col-sm-2 sidenav"> 
+        </div>
+        <div class="col-sm-8 text-left"> 
+            <h1>Emotion Tracker</h1>
+            <div id="selectEmotionChart" style="height:500px;"></div>
+        </div>
+        <div class="col-sm-2 sidenav">        
+        </div>
+    </body>
+</html>
