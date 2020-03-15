@@ -45,16 +45,22 @@ $(document).ready(function(){
         chart.draw(data, options);
       }      
 
-      function selectEmotion(xVal,yVal){
+      function selectEmotion(xVal = 0,yVal= 0){
         var x = data.getValue(data.getNumberOfRows() - 1, 0);
         var y = data.getValue(data.getNumberOfRows() - 1, 1);
-        x = xVal;
-        y = yVal;
+        if (xVal != 0){
+          x = xVal;
+        }
+        if (yVal != 0){
+          y = yVal;
+        }        
         chart.draw(data, options);
       }      
 
-      $('#submitEmotion').onclick({
-        selectEmotion($('#xVal').getValue(), $('#yVal').getValue())  
-      });
+      function changeEmotion(){
+        var x = $('#xVal :selected').val();
+        var y = $('#yVal :selected').val();
+        selectEmotion(x, y);  
+      };
     }
 });

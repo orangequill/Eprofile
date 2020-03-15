@@ -15,7 +15,7 @@
             <div class="container-fluid">
               <ul class="nav navbar-nav">
                 <li>
-                    <a class="nav-link " href="/">Home</a>
+                    <a class="nav-link " href=/Repositories/EProfile/templates/Home.html">Home</a>
                 </li>         
                 <li class="dropdown">
                     <a class="dropdown-toggle" data-toggle="dropdown" href="#">Survey<span class="caret"></span></a>
@@ -29,7 +29,7 @@
                   <a class="nav-link " href="/Repositories/EProfile/templates/Calendar.html">Calendar</a>
                 </li>
                 <li>
-                  <a class="nav-link" href="/">Reporting</a>
+                  <a class="nav-link" href="/Repositories/EProfile/templates/Reporting.html">Reporting</a>
                 </li>
                 <li>
                   <a class="nav-link" href="/Repositories/EProfile/templates/Profile.html">Profile</a>
@@ -39,9 +39,52 @@
         </header>
         <div class="col-sm-2 sidenav"> 
         </div>
+        <div>
+          
+        </div>
         <div class="col-sm-8 text-left"> 
             <h1>Emotion Tracker</h1>
+            <hr>     
             <div id="selectEmotionChart" style="height:500px;"></div>
+            <div class="col-sm-4">
+              <label for="xVal">Choose X Coordinate:</label>
+              <select id="xVal">
+                <option value="-5">-5</option>
+                <option value="-4">-4</option>
+                <option value="-3">-3</option>
+                <option value="-2">-2</option>
+                <option value="-1">-1</option>
+                <option value="0" selected="selected">0</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+              </select>
+            </div>
+            <div class="col-sm-4">
+              <label for="yVal">Choose Y Coordinate:</label>
+              <select id="yVal">
+                <option value="-5">-5</option>
+                <option value="-4">-4</option>
+                <option value="-3">-3</option>
+                <option value="-2">-2</option>
+                <option value="-1">-1</option>
+                <option value="0" selected="selected">0</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+              </select>
+            </div>
+            <div class="col-sm-4">
+              <textarea cols="50" rows="1"> Enter in text here...</textarea>
+            </div>
+            <div class="col-sm-12">
+              <hr>
+              <button type="button" class="btn btn-success" id="submitEmotion" style="float: right;" onclick="changeEmotion()">Click</button>
+            </div>            
         </div>
         <div class="col-sm-2 sidenav">        
         </div>
