@@ -42,19 +42,19 @@ $(document).ready(function(){
       function initEmotion(){
         var x = data.getValue(data.getNumberOfRows() - 1, 0);
         var y = data.getValue(data.getNumberOfRows() - 1, 1);
-        //data.setValue(data.getNumberOfRows() - 1, 0, x);
-        //data.setValue(data.getNumberOfRows() - 1, 1, y);
         chart.draw(data, options);
       }      
 
-      function selectEmotion(){
+      function selectEmotion(xVal,yVal){
         var x = data.getValue(data.getNumberOfRows() - 1, 0);
         var y = data.getValue(data.getNumberOfRows() - 1, 1);
-        x = .7;
-        y = -.3;
-        //data.setValue(data.getNumberOfRows() - 1, 0, x);
-        //data.setValue(data.getNumberOfRows() - 1, 1, y);
+        x = xVal;
+        y = yVal;
         chart.draw(data, options);
       }      
+
+      $('#submitEmotion').onclick({
+        selectEmotion($('#xVal').getValue(), $('#yVal').getValue())  
+      });
     }
 });
