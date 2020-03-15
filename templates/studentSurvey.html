@@ -15,7 +15,10 @@
               <ul class="nav navbar-nav">
                 <li>
                     <a class="nav-link " href="/Repositories/EProfile/templates/Home.html">Home</a>
-                </li>         
+                </li>      
+                <li>
+                  <a class="nav-link" href="/Repositories/EProfile/templates/emotionTracker.html">Emotion Tracker</a>
+                </li>   
                 <li class="dropdown">
                     <a class="dropdown-toggle" data-toggle="dropdown" href="#">Survey<span class="caret"></span></a>
                     <ul class="dropdown-menu">
@@ -41,8 +44,8 @@
         <div class="col-sm-8 text-left" id="centerPane"> 
           <h1>Survey - Student</h1>
           <hr>       
-          {{.Fname}}
-          <h3 for="customRange1">Question 1</h3>
+          <h3 for="customRange1">Question 1 - In the last month, how often have you been upset because of something that happened unexpectedly?</h3>
+          <p>0 = Never 1 = Almost Never 2 = Sometimes 3 = Fairly Often 4 = Very Often</p>
           <input type="range" class="custom-range slider" min="1" max="5" id="customRange1">
           <div class="sliderticks">
             <p>1</p>
@@ -52,7 +55,8 @@
             <p>5</p>
           </div>
           <hr>
-          <h3 for="customRange2">Question 2</h3>
+          <h3 for="customRange2">Question 2 - In the last month, how often have you felt that you were unable to control the important things in your life?</h3>
+          <p>0 = Never 1 = Almost Never 2 = Sometimes 3 = Fairly Often 4 = Very Often</p>
           <input type="range" class="custom-range slider" min="1" max="5" id="customRange2">
           <div class="sliderticks">
             <p>1</p>
@@ -62,7 +66,8 @@
             <p>5</p>
           </div>
           <hr>
-          <h3 for="customRange3">Question 3</h3>
+          <h3 for="customRange3">Question 3 - In the last month, how often have you felt nervous and stressed?</h3>
+          <p>0 = Never 1 = Almost Never 2 = Sometimes 3 = Fairly Often 4 = Very Often</p>
           <input type="range" class="custom-range slider" min="1" max="5" id="customRange3">
           <div class="sliderticks">
             <p>1</p>

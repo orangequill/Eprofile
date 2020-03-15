@@ -7,7 +7,7 @@
          <link rel="stylesheet" href="/Repositories/EProfile/Styles/surveyStyle.css">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-        <script type="text/javascript" src="/Repositories/EProfile/Scripts/slider.js"></script>
+        <script type="text/javascript" src="/Repositories/EProfile/Scripts/chartsjs"></script>
         <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
     </head>
     <body>        
@@ -15,8 +15,11 @@
             <div class="container-fluid">
               <ul class="nav navbar-nav">
                 <li>
-                    <a class="nav-link " href=/Repositories/EProfile/templates/Home.html">Home</a>
-                </li>         
+                    <a class="nav-link " href="/Repositories/EProfile/templates/Home.html">Home</a>
+                </li>        
+                <li>
+                  <a class="nav-link" href="/Repositories/EProfile/templates/emotionTracker.html">Emotion Tracker</a>
+                </li> 
                 <li class="dropdown">
                     <a class="dropdown-toggle" data-toggle="dropdown" href="#">Survey<span class="caret"></span></a>
                     <ul class="dropdown-menu">
@@ -83,10 +86,10 @@
             </div>
             <div class="col-sm-12">
               <hr>
-              <button type="button" class="btn btn-success" id="submitEmotion" style="float: right;" onclick="changeEmotion()">Click</button>
+              <button type="button" class="btn btn-success" id="submitEmotion" style="float: right;">Click</button>
             </div>            
         </div>
         <div class="col-sm-2 sidenav">        
-        </div>
+        </div>        
     </body>
 </html>
