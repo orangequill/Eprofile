@@ -25,7 +25,7 @@ $(document).ready(function(){
         google.visualization.events.addOneTimeListener(chart, 'ready', initEmotion);
 
         // Control all other animations by listening to the 'animationfinish' event.
-        google.visualization.events.addListener(chart, 'animationfinish', selectEmotion);
+        google.visualization.events.addListener(chart, 'animationfinish', selectEmotion(1,1));
 
         chart.draw(data, options);
 
@@ -45,12 +45,6 @@ $(document).ready(function(){
             y = yVal;
         }        
         chart.draw(data, options);
-        };
-        // Listen for the 'select' event, and call my function selectHandler() when
-        // the user selects something on the chart.
-        //google.visualization.events.addListener(chart, 'select', selectEmotion);
-        // document.getElementById('submitEmotion').onclick({
-        //   selectEmotion(getElementById('xVal'), document.getElementById('yVal'))
-        // });   
+        }; 
     }
 });
