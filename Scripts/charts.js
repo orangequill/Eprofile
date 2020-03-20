@@ -16,8 +16,8 @@ $(document).ready(function(){
         var options = {
         legend: 'none',
         colors: ['black'],
-        hAxis: { minValue: -10, maxValue: 10},
-        vAxis: { minValue: -10, maxValue: 10},
+        hAxis: { minValue: -5, maxValue: 5},
+        vAxis: { minValue: -5, maxValue: 5},
         pointShape: 'circle',
         pointSize: 15
         };
