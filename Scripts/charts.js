@@ -1,4 +1,5 @@
 $(document).ready(function(){
+
     /* The chart js code was based off of a random walk chart. I borrowed the library because it was the best one I had found. 
        Source attribution: https://developers.google.com/chart/interactive/docs/gallery/scatterchart#fullhtml
     */
@@ -24,29 +25,87 @@ $(document).ready(function(){
 
         var chart = new google.visualization.ScatterChart(document.getElementById('selectEmotionChart'));
 
-        google.visualization.events.addOneTimeListener(chart, 'ready', initEmotion);
+        google.visualization.events.addOneTimeListener(chart, 'ready', initEmotion());
 
-        // Control all other animations by listening to the 'animationfinish' event.
-        google.visualization.events.addListener(chart, 'animationfinish', selectEmotion(1,1));
+        // // Control all other selections by listening to the 'select' event.
+        // google.visualization.events.addListener(chart, 'ready', xChange());
+        // google.visualization.events.addListener(chart, 'ready', yChange());
 
         chart.draw(data, options);
 
         function initEmotion(){
-        var x = data.getValue(data.getNumberOfRows() - 1, 0);
-        var y = data.getValue(data.getNumberOfRows() - 1, 1);
-        chart.draw(data, options);
+            var x = data.getValue(data.getNumberOfRows() - 1, 0);
+            var y = data.getValue(data.getNumberOfRows() - 1, 1);
+            chart.draw(data, options);
         };    
 
-        function selectEmotion(xVal = 0,yVal= 0){
-        var x = data.getValue(data.getNumberOfRows() - 1, 0);
-        var y = data.getValue(data.getNumberOfRows() - 1, 1);
-        if (xVal != 0){
-            x = xVal;
+        // getting change values
+        var dropdownX = document.getElementById("xVal");
+        var dropdownY = document.getElementById("yVal");
+
+        // change event
+        dropdownX.onchange = function(event){
+            var x = data.getValue(data.getNumberOfRows() - 1, 0);
+            x = dropdownX.value;
+            data.setValue(data.getNumberOfRows() - 1, 0, x);      
+            chart.draw(data, options);          
         }
-        if (yVal != 0){
-            y = yVal;
-        }        
-        chart.draw(data, options);
-        }; 
+
+        dropdownY.onchange = function(event){
+            var y = data.getValue(data.getNumberOfRows() - 1, 1);
+            y = dropdownY.value;
+            data.setValue(data.getNumberOfRows() - 1, 1, y);
+            chart.draw(data, options);
+        }
+        
+
+        // function xChange(){
+        //     var x = data.getValue(data.getNumberOfRows() - 1, 0);
+
+        //     // getting change values
+        //     var dropdownX = document.getElementById("xVal");
+
+        //      // change event
+        //     dropdownX.onchange = function(event){
+        //         data.setValue(data.getNumberOfRows() - 1, 0, dropdownX.value);                
+        //     }
+        //     chart.draw(data, options);
+        // };
+
+        // function yChange(){
+        //     var y = data.getValue(data.getNumberOfRows() - 1, 1);
+
+        //     // getting change values
+        //     var dropdownY = document.getElementById("yVal");
+
+        //     dropdownY.onchange = function(event){
+        //         y = dropdownY.value;
+        //         data.setValue(data.getNumberOfRows() - 1, 1, y);
+               
+        //     }
+        //     chart.draw(data, options);
+        // };
+
+        // function selectEmotion(){
+        //     var x = data.getValue(data.getNumberOfRows() - 1, 0);
+        //     var y = data.getValue(data.getNumberOfRows() - 1, 1);
+
+        //     // getting change values
+        //     var dropdownX = document.getElementById("xVal");
+        //     var dropdownY = document.getElementById("yVal");
+
+        //     // change event
+        //     dropdownX.onchange = function(event){
+        //         x = dropdownX.value;
+        //         data.setValue(data.getNumberOfRows() - 1, 0, x);
+        //         chart.draw(data, options);
+        //     }
+        //     dropdownY.onchange = function(event){
+        //         y = dropdownY.value;
+        //         data.setValue(data.getNumberOfRows() - 1, 1, y);
+        //         chart.draw(data, options);
+        //     }
+        // }; 
+
     }
 });
