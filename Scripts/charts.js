@@ -25,11 +25,7 @@ $(document).ready(function(){
 
         var chart = new google.visualization.ScatterChart(document.getElementById('selectEmotionChart'));
 
-        google.visualization.events.addOneTimeListener(chart, 'ready', initEmotion());
-
-        // // Control all other selections by listening to the 'select' event.
-        // google.visualization.events.addListener(chart, 'ready', xChange());
-        // google.visualization.events.addListener(chart, 'ready', yChange());
+        google.visualization.events.addOneTimeListener(chart, 'ready', initEmotion);
 
         chart.draw(data, options);
 
@@ -57,55 +53,5 @@ $(document).ready(function(){
             data.setValue(data.getNumberOfRows() - 1, 1, y);
             chart.draw(data, options);
         }
-        
-
-        // function xChange(){
-        //     var x = data.getValue(data.getNumberOfRows() - 1, 0);
-
-        //     // getting change values
-        //     var dropdownX = document.getElementById("xVal");
-
-        //      // change event
-        //     dropdownX.onchange = function(event){
-        //         data.setValue(data.getNumberOfRows() - 1, 0, dropdownX.value);                
-        //     }
-        //     chart.draw(data, options);
-        // };
-
-        // function yChange(){
-        //     var y = data.getValue(data.getNumberOfRows() - 1, 1);
-
-        //     // getting change values
-        //     var dropdownY = document.getElementById("yVal");
-
-        //     dropdownY.onchange = function(event){
-        //         y = dropdownY.value;
-        //         data.setValue(data.getNumberOfRows() - 1, 1, y);
-               
-        //     }
-        //     chart.draw(data, options);
-        // };
-
-        // function selectEmotion(){
-        //     var x = data.getValue(data.getNumberOfRows() - 1, 0);
-        //     var y = data.getValue(data.getNumberOfRows() - 1, 1);
-
-        //     // getting change values
-        //     var dropdownX = document.getElementById("xVal");
-        //     var dropdownY = document.getElementById("yVal");
-
-        //     // change event
-        //     dropdownX.onchange = function(event){
-        //         x = dropdownX.value;
-        //         data.setValue(data.getNumberOfRows() - 1, 0, x);
-        //         chart.draw(data, options);
-        //     }
-        //     dropdownY.onchange = function(event){
-        //         y = dropdownY.value;
-        //         data.setValue(data.getNumberOfRows() - 1, 1, y);
-        //         chart.draw(data, options);
-        //     }
-        // }; 
-
     }
 });
