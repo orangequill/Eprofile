@@ -3,10 +3,10 @@ $(document).ready(function(){
     /* The chart js code was based off of a random walk chart. I borrowed the library because it was the best one I had found. 
        Source attribution: https://developers.google.com/chart/interactive/docs/gallery/scatterchart#fullhtml
     */
-   google.charts.load("current", {packages:["corechart"]});
-   google.charts.setOnLoadCallback(drawChart);
+    google.charts.load("current", {packages:["corechart"]});
+    google.charts.setOnLoadCallback(drawChart);
 
-   function drawChart() {
+    function drawChart() {
         var data = new google.visualization.DataTable();
         data.addColumn('number');
         data.addColumn('number');
@@ -39,7 +39,7 @@ $(document).ready(function(){
         var dropdownX = document.getElementById("xVal");
         var dropdownY = document.getElementById("yVal");
 
-        // change event
+        // change events for x and y selections below
         dropdownX.onchange = function(event){
             var x = data.getValue(data.getNumberOfRows() - 1, 0);
             x = dropdownX.value;
