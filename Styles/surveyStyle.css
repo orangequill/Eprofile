@@ -95,6 +95,12 @@ textarea {
   cursor: pointer;
 }
 
+/* .header{
+  position: fixed;
+  top: 0;
+  width: 100%
+} */
+
 .footer {
   position: fixed;
   left: 0;
