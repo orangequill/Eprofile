@@ -1,13 +1,8 @@
-$(document).ready(function(){
     /*Note - var is function scoped and let is block scoped*/
     var today = new Date();
     var year = today.getFullYear();
     var month = today.getMonth();
     var daysInMonth = new Date(year, month + 1, 0).getDate();
-
-    alert(today);
-
-    showCalendar(month, year);
 
     function showCalendar(month, year){
         let firstDay = new Date(year, month).getDay();
@@ -23,8 +18,6 @@ $(document).ready(function(){
                 // Insert a cell in the row at index 0
                 var newCell  = row.insertCell(cols);                
                 let cellContent = null;
-                // alert(i == firstDay);
-                // alert(cols < firstDay);
                 if(i == 0 && cols < firstDay && !nextMonth){
                     date = 0;
                     cellContent = document.createTextNode("");             
@@ -44,13 +37,57 @@ $(document).ready(function(){
         }
     }  
 
+$(document).ready(function(){
+
+    showCalendar(month, year);
+    
     $('tbody tr td').mouseover(function(){
-        // $(this).css("border", "2px solid #CC66FF");
         $(this).css("background", "#eaf1f8");
     });
 
     $('tbody tr td').mouseout(function(){
-    //    $(this).css("border", "1px solid #ddd");
        $(this).css("background", "white");
     });
+
 });
+
+function previousMonth(){
+
+    if(month == 0){
+        month = 12;
+    }
+    else{
+        month = month - 1;
+    }
+
+    $("#calBody").empty();
+    showCalendar(month, year);
+    $('tbody tr td').mouseover(function(){
+        $(this).css("background", "#eaf1f8");
+    });
+
+    $('tbody tr td').mouseout(function(){
+       $(this).css("background", "white");
+    });
+}
+
+
+function nextMonth(){
+    
+    if(month == 12){
+        month = 1;
+    }
+    else{
+        month = month + 1;
+    }
+
+    $("#calBody").empty();
+    showCalendar(month, year);
+    $('tbody tr td').mouseover(function(){
+        $(this).css("background", "#eaf1f8");
+    });
+
+    $('tbody tr td').mouseout(function(){
+       $(this).css("background", "white");
+    });
+}
