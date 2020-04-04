@@ -42,50 +42,62 @@
         </header>
         <div class="col-sm-2 sidenav"> 
         </div>
-        <div class="container col-sm-8 text-left"> 
+        <div class="container col-sm-8 text-left" id="calContainer"> 
           <h1>Calendar - 2020</h1>
-          <hr>     
-          <table class="table table-bordered table-responsive-sm" id="Calendar"> 
-            <thead>
-              <div class="col-sm-10 dates">
-                <label for="monthVal">Select Month:</label>
-                <select id="monthVal">
-                  <option value="January">January</option>
-                  <option value="February">February</option>
-                  <option value="March">March</option>
-                  <option value="April" selected="selected">April</option>
-                  <option value="May">May</option>
-                  <option value="June">June</option>
-                  <option value="July">July</option>
-                  <option value="August">August</option>
-                  <option value="September">September</option>
-                  <option value="October">October</option>
-                  <option value="November">November</option>
-                  <option value="December">December</option>
-                </select>
-              </div>
-              <tr>
-                <th>Sunday</th>
-                <th>Monday</th>
-                <th>Tuesday</th>
-                <th>Wednesday</th>
-                <th>Thursday</th>
-                <th>Friday</th>
-                <th>Saturday</th>
-              </tr>
-            </thead>
-            <tbody id="calBody">              
-            </tbody>  
-          </table>   
+          <hr> 
+          <div class="col-sm-6">
+            <table class="table table-bordered table-responsive-sm" id="Calendar"> 
+              <thead>
+                <div class="col-sm-10 dates">
+                  <label for="monthVal">Select Month:</label>
+                  <select id="monthVal">
+                    <option value="January">January</option>
+                    <option value="February">February</option>
+                    <option value="March">March</option>
+                    <option value="April" selected="selected">April</option>
+                    <option value="May">May</option>
+                    <option value="June">June</option>
+                    <option value="July">July</option>
+                    <option value="August">August</option>
+                    <option value="September">September</option>
+                    <option value="October">October</option>
+                    <option value="November">November</option>
+                    <option value="December">December</option>
+                  </select>
+                </div>
+                <tr>
+                  <th>Sunday</th>
+                  <th>Monday</th>
+                  <th>Tuesday</th>
+                  <th>Wednesday</th>
+                  <th>Thursday</th>
+                  <th>Friday</th>
+                  <th>Saturday</th>
+                </tr>
+              </thead>
+              <tbody id="calBody">              
+              </tbody>  
+            </table>   
+          </div>
+          <div id="feed"  class="col-sm-6">
+            <h2>Suggestions</h2>
+            <hr>
+            <p>Suggestion - sleep by 10:00 pm</p>
+            <p>Suggestion - contact mentor by next Wednesday</p>
+            <p>Suggestion - prioritize weekly activities</p>
+            <p>Suggestion - Call Laura</p>
+          </div>              
           <br/>
           <div class="form-inline col-sm-12"> 
-            <button class="prev btn btn-outline-primary col-sm-6" onclick="previousMonth()">Previous</button>
-            <button class="next btn btn-outline-primary col-sm-6" onclick="nextMonth()">Next</button>
+            <button class="prev btn btn-outline-primary col-sm-3" onclick="previousMonth()">Previous</button>
+            <button class="next btn btn-outline-primary col-sm-3" onclick="nextMonth()">Next</button>
           </div>  
           <br/>
-          <hr>
+          <div id="break" class='col-sm-12'></div>
+          <br/>
           <div id="selectedDate" class='col-sm-12'>
             <span class="border border-primary"><h3>Upcoming Events for - Monday - 5</h3></span>
+            <hr>
             <p>Work From Home 9:00 - 4:00 pm</p>
             <p>Dinner from 4:30 - 5:30 pm</p>
             <p>Peer Meetup from 6:00 - 7:30 pm</p>
@@ -111,7 +123,6 @@
             </div>
           </div>
         </div>
-        <hr>
         <br/>
         <div class="col-sm-2 sidenav">        
         </div>
