@@ -1,16 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
+      <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-         <link rel="stylesheet" href="/Repositories/EProfile/Styles/surveyStyle.css">
-         <link rel="stylesheet" href="/Repositories/EProfile/Styles/Reporting.css">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+        <link rel="stylesheet" href="/Repositories/EProfile/Styles/surveyStyle.css">
+        <link rel="stylesheet" href="/Repositories/EProfile/Styles/Reporting.css">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-        <script type="text/javascript" href="/Repositories/EProfile/Scripts/slider.js"></script>
-        <script src="https://d3js.org/d3.v5.min.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.17/d3.min.js"></script>
+        <script type="text/javascript" src="/Repositories/EProfile/Scripts/reporting.js"></script>
+        <script src="https://d3js.org/d3.v3.min.js"></script>
     </head>
     <body>        
         <header class="navbar navbar-default">
@@ -49,19 +48,32 @@
           <hr>
           <div id="LearningProfile" class="col-sm-12">
             <h3>Learning Profile</h3>
+            <hr>
+            <div id="LearningProfileChart">
+            </div>
           </div>
           <br>
-          <div id="space" class="col-sm-12"></div>
+          <div class="col-sm-12 space"></div>
           <br>
           <div id="anxietyScore" class="col-sm-6">
             <h3>Anxiety Score</h3>
+            <hr>
+            <div id="anxietyScoreChart" align="center">
+              <p style="background:yellow">Educator - 9</p>
+              <p style="background:blue">Peer - 7</p>
+              <p style="background:red;">Self - 10</p>
+            </div>
           </div> 
-          <div id="emotionalityScore" class="col-sm-6">
+          <div id="emotionalityScore" class="col-sm-6" >
             <h3>Emotionality Score</h3>
+            <hr>
+            <div id="emotionalityScoreChart">
+              <p>I'm intending to have a frequency chart here from the data collected from the "Emotion Tracker" page.</p>
+            </div>
           </div>                 
         </div>
-        <div class="col-sm-2 sidenav">        
-        </div>
-        <div class="footer"></div>     
+        <div class="col-sm-2 sidenav"></div>          
+        <br/>
     </body>
+    <div class="footer"></div>   
 </html>
