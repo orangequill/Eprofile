@@ -5,6 +5,8 @@ import (
 	"fmt"
 	"html/template"
 	"io/ioutil"
+	"log"
+	"mime"
 	"net/http"
 )
 
@@ -54,20 +56,22 @@ func selfQuestionHandler(w http.ResponseWriter, r *http.Request) {
 	}
 }
 
-func serveCSS(w http.ResponseWriter, req *http.Request) {
-	path := "../../Styles" + req.URL.Path
+func serveAssets(w http.ResponseWriter, req *http.Request) {
+	path := "." + req.URL.Path
+	mime.AddExtensionType(".css", "text/css; charset=utf-8")
+	mime.AddExtensionType(".js", "application/javascript; charset=utf-8")
+	log.Printf("path" + path)
 	http.FileServer(http.Dir(path))
 }
 
-func serveJS(w http.ResponseWriter, req *http.Request) {
-	path := "../../Scripts" + req.URL.Path
-	http.FileServer(http.Dir(path))
-}
+// func serveJS(w http.ResponseWriter, req *http.Request) {
+// 	path := "./Scripts" //+ req.URL.Path
+// 	mime.AddExtensionType(".js", "application/javascript; charset=utf-8")
+// 	http.FileServer(http.Dir(path))
+// }
 
 func main() {
-	//router := mux.NewRouter()
 	http.HandleFunc("/studentSurvey/", selfQuestionHandler)
-	//router.PathPrefix("/").HandlerFunc(serveCSS)
-	//router.PathPrefix("/").HandlerFunc(serveJS)
+	http.HandleFunc("/", serveAssets)
 	http.ListenAndServe(":8080", nil)
 }
