@@ -64,6 +64,7 @@ func serveAssets(w http.ResponseWriter, req *http.Request) {
 	http.FileServer(http.Dir(path))
 }
 
+// removed because path referenced all paths - both js and css
 // func serveJS(w http.ResponseWriter, req *http.Request) {
 // 	path := "./Scripts" //+ req.URL.Path
 // 	mime.AddExtensionType(".js", "application/javascript; charset=utf-8")
