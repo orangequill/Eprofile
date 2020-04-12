@@ -1,0 +1,22 @@
+#LearningProfile{
+    height:450px; 
+    border: 2px solid black;
+}
+
+#anxietyScore{
+    height:400px; 
+    border: 2px solid black;
+}
+
+#emotionalityScore{
+    height:400px; 
+    border: 2px solid black;
+}
+
+.space{
+    height:20px;
+}
+
+.footer{
+    position: relative;  
+}

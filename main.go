@@ -6,7 +6,6 @@ import (
 	"html/template"
 	"io/ioutil"
 	"log"
-	"mime"
 	"net/http"
 )
 
@@ -56,14 +55,13 @@ func selfQuestionHandler(w http.ResponseWriter, r *http.Request) {
 	}
 }
 
-func serveAssets(w http.ResponseWriter, req *http.Request) {
-	path := "." + req.URL.Path
-	mime.AddExtensionType(".css", "text/css; charset=utf-8")
-	mime.AddExtensionType(".js", "application/javascript; charset=utf-8")
-	log.Printf("path" + path)
-	http.FileServer(http.Dir(path))
-}
-
+//func serveAssets(w http.ResponseWriter, req *http.Request) {
+//	path := "." + req.URL.Path
+//	mime.AddExtensionType(".css", "text/css; charset=utf-8")
+//	mime.AddExtensionType(".js", "application/javascript; charset=utf-8")
+//	log.Printf("path" + path)
+//	http.FileServer(http.Dir(path))
+//}
 // func serveJS(w http.ResponseWriter, req *http.Request) {
 // 	path := "./Scripts" //+ req.URL.Path
 // 	mime.AddExtensionType(".js", "application/javascript; charset=utf-8")
@@ -71,7 +69,15 @@ func serveAssets(w http.ResponseWriter, req *http.Request) {
 // }
 
 func main() {
-	http.HandleFunc("/studentSurvey/", selfQuestionHandler)
-	http.HandleFunc("/", serveAssets)
-	http.ListenAndServe(":8080", nil)
+	//http.HandleFunc("/studentSurvey/", selfQuestionHandler)
+	//http.Handle("/", http.FileServer(http.Dir("./assets")))
+	//http.ListenAndServe(":8080", nil)
+	fs := http.FileServer(http.Dir("./assets/"))
+	http.StripPrefix("/assets/css/", http.FileServer(http.Dir("./assets/css/")))
+	http.Handle("/", http.StripPrefix("/assets/", fs))
+	log.Println("Listening on :3000...")
+	err := http.ListenAndServe(":3000", nil)
+	if err != nil {
+		log.Fatal(err)
+	}
 }

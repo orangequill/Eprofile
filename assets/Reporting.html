@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+      <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+        <link rel="stylesheet" href="/Repositories/EProfile/Styles/surveyStyle.css">
+        <link rel="stylesheet" href="/Repositories/EProfile/Styles/Reporting.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+        <script type="text/javascript" src="/Repositories/EProfile/Scripts/reporting.js"></script>
+        <script src="https://d3js.org/d3.v3.min.js"></script>
+    </head>
+    <body>        
+        <header class="navbar navbar-default">
+            <div class="container-fluid">
+              <ul class="nav navbar-nav">
+                <li>
+                    <a class="nav-link " href="/Repositories/EProfile/templates/Home.html">Home</a>
+                </li>     
+                <li>
+                  <a class="nav-link" href="/Repositories/EProfile/templates/emotionTracker.html">Emotion Tracker</a>
+                </li>    
+                <li class="dropdown">
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">Survey<span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="/Repositories/EProfile/templates/educatorSurvey.html">Educator</a></li>
+                        <li><a href="/Repositories/EProfile/templates/studentSurvey.html">Student Assessment</a></li>
+                        <li><a href="/Repositories/EProfile/templates/peerSurvey.html">Peer Assessment</a></li>
+                    </ul>
+                  </li>                                       
+                <li>
+                  <a class="nav-link " href="/Repositories/EProfile/templates/Calendar.html">Calendar</a>
+                </li>
+                <li>
+                  <a class="nav-link" href="/Repositories/EProfile/templates/Reporting.html">Reporting</a>
+                </li>
+                <li>
+                  <a class="nav-link" href="/Repositories/EProfile/templates/Profile.html">Profile</a>
+                </li>
+              </ul> 
+            </div>
+        </header>
+        <div class="col-sm-2 sidenav"> 
+        </div>
+        <div class="col-sm-8 text-left" id="centerPane"> 
+          <h1>Reporting</h1>
+          <hr>
+          <div id="LearningProfile" class="col-sm-12">
+            <h3>Learning Profile</h3>
+            <hr>
+            <div id="LearningProfileChart">
+            </div>
+          </div>
+          <br>
+          <div class="col-sm-12 space"></div>
+          <br>
+          <div id="anxietyScore" class="col-sm-6">
+            <h3>Anxiety Score</h3>
+            <hr>
+            <div id="anxietyScoreChart" align="center">
+              <p style="background:yellow">Educator - 9</p>
+              <p style="background:blue">Peer - 7</p>
+              <p style="background:red;">Self - 10</p>
+            </div>
+          </div> 
+          <div id="emotionalityScore" class="col-sm-6" >
+            <h3>Emotionality Score</h3>
+            <hr>
+            <div id="emotionalityScoreChart">
+              <p>I'm intending to have a frequency chart here from the data collected from the "Emotion Tracker" page.</p>
+            </div>
+          </div>                 
+        </div>
+        <div class="col-sm-2 sidenav"></div>          
+        <br/>
+    </body>
+    <div class="footer"></div>   
+</html>
