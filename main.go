@@ -26,7 +26,7 @@ type Name struct {
 
 func selfQuestionHandler(w http.ResponseWriter, r *http.Request) {
 	// Open our jsonFile
-	content, err := ioutil.ReadFile("/Repositories/EProfile/Resources/PerceivedStressScale.json")
+	content, err := ioutil.ReadFile("/Assets/Resources/PerceivedStressScale.json")
 	if err != nil {
 		fmt.Println(err.Error())
 	}
@@ -46,7 +46,7 @@ func selfQuestionHandler(w http.ResponseWriter, r *http.Request) {
 
 	name := Name{outStr}
 
-	template, _ := template.ParseFiles("/Repositories/EProfile/templates/studentSurvey.html")
+	template, _ := template.ParseFiles("/Assets/studentSurvey.html")
 	w.Header().Set("Content-Type", "text/html; charset=utf-8")
 	err3 := template.Execute(w, name)
 	if err3 != nil {

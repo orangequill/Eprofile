@@ -1,7 +1,0 @@
-
-[
-    {"num": "1", "x":"3", "y":"4", "score": "5", "emotion":"Excited"},
-    {"num": "2", "x":"-3", "y":"4", "score": "-5", "emotion":"Sad"},
-    {"num": "3", "x":"3", "y":"-4", "score": "-5", "emotion":"Calm"}   
-]
-
