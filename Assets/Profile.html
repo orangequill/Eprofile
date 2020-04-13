@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+        <link rel="stylesheet" href="/Assets/Styles/surveyStyle.css">
+        <link rel="stylesheet" href="/Assets/Styles/Contract.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+        <script type="text/javascript" src="/Assets/Scripts/Contract.js"></script>
+    </head>
+    <body>        
+        <header class="navbar navbar-default">
+            <div class="container-fluid">
+              <ul class="nav navbar-nav">
+                <li>
+                    <a class="nav-link " href="/Assets/Home.html">Home</a>
+                </li>         
+                <li>
+                  <a class="nav-link" href="/Assets/emotionTracker.html">Emotion Tracker</a>
+                </li>
+                <li class="dropdown">
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">Survey<span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                      <li><a href="/Assets/educatorSurvey.html">Educator</a></li>
+                      <li><a href="/Assets/studentSurvey.html">Student Assessment</a></li>
+                      <li><a href="/Assets/peerSurvey.html">Peer Assessment</a></li>
+                    </ul>
+                  </li>                                       
+                <li>
+                  <a class="nav-link " href="/Assets/Calendar.html">Calendar</a>
+                </li>
+                <li>
+                  <a class="nav-link" href="/Assets/Reporting.html">Reporting</a>
+                </li>
+                <li>
+                  <a class="nav-link" href="/Assets/Profile.html" >Profile</a>
+                </li>                
+              </ul> 
+            </div>
+        </header>
+        <div class="col-sm-2 sidenav"> 
+        </div>
+        <div class="col-sm-8 text-left"> 
+          <h1>Profile</h1>
+          <h2>Hello Sandy!</h2>
+          <hr>
+          <div class="col-sm-12"> 
+            <h2>Demographics</h2>
+            <div id="userInfo" class="col-sm-6">
+              <h2>User Information</h2>
+              <div class="col-sm-6"><label>First Name</label></div>
+              <div class="col-sm-6"><input type="text" id="fname" value="Sandra"></div>
+              <div class="col-sm-6"><label>Preferred Name</label></div>
+              <div class="col-sm-6"><input type="text" id="pname" value="Sandy"></div>
+              <div class="col-sm-6"><label>Last Name</label></div>
+              <div class="col-sm-6"><input type="text" id="lname" value="Pogarcic"></div>       
+            </div>
+            <div id="contactInfo" class="col-sm-6">
+              <h2>Location Information</h2>
+              <div class="col-sm-6"><label>Email</label></div>
+              <div class="col-sm-6"><input type="text" id="emailId" value="spogarcic3@gatech.edu"></div>
+              <div class="col-sm-6"><label>Location</label></div>
+              <div class="col-sm-6"><input type="text" id="locId" value="North Carolina"></div>
+              <div class="col-sm-6"><label>Local Group</label></div>
+              <div class="col-sm-6"><input type="text" id="lGroupId" value="Group A"></div>
+            </div>
+          </div>
+          <div class="col-sm-12"><hr></div>
+          
+          <h2>Contracts - By Classes</h2>
+          <hr>
+          <h3>Teacher-Student Contract for: OMSCS6460</h3>
+          <button type="button" class="collapsible">Click to show/hide</button>
+          <div class="content">
+            <h4>Due Dates</h4>
+            <ul>
+              <li>Assignment 1 - 2/16/2020</li>
+              <ul>
+                <li>Weekly Status Check</li>
+                <li>Create a wireframe</li>
+                <li>Select libraries</li>
+              </ul>
+              <li>Assignment 2 - 2/23/2020</li>
+              <ul>
+                <li>Weekly Status Check</li>
+                <li>Choose a backend language</li>
+              </ul>
+              <li>Assignment 3 - 3/1/2020</li>
+              <ul>
+                <li>Weekly Status Check</li>
+                <li>Create a template</li>
+              </ul>
+            </ul>
+            <h4>Test Dates</h4>
+            <ul>
+            <li>Test 1 - 2/20/2020</li>
+            <ul>
+              <li>Topic 1</li>
+              <li>Topic 2</li>
+            </ul>
+            <li>Test 2 - 2/25/2020</li>
+            <ul>
+              <li>Topic 3</li>
+              <li>Topic 4</li>
+            </ul>
+            </ul>
+            <h4>Accomomodations</h4>
+            <ul>
+              <li>Community Notes</li>
+              <li>Thing 2</li>
+            </ul>
+            <h4>Recommended Resources</h4>
+            <ul>
+              <li>Stack Overflow</li>
+              <li>Mentor chat on Piazza</li>
+              <li>Peer Group</li>
+              <li>Past student projects</li>
+            </ul>
+            <h4>Potential Conflicts</h4>
+            <ul>
+              <li>Daytime work schedule</li>
+              <li>Overtime</li>
+            </ul>
+            <h4>Plan to Resolve Potential Conflicts</h4>
+            <ul>
+              <li>Time management schedule</li>
+              <li>Agreed upon prioritization goals</li>
+              <li>Establish expectations with workgroup about who is going to do what on the class project</li>
+              <li>Establish expectations with workgroup about the level of effort expected on the class project</li>
+            </ul>
+            <h4>Course Objectives</h4>
+            <ul>
+              <li>Learn Golang</li>
+              <li>Develop template</li>
+              <li>Meet with local group once a week.</li>
+              <li>Manage external priorities</li>
+              <li>Become more proficient with technology like Piazza</li>
+            </ul>
+            <h4>Confidence with technology</h4>
+            <ul>
+              <li>Time management schedule</li>
+              <li>Agreed upon prioritization goals</li>
+              <li>Establish expectations with workgroup about who is going to do what on the class project</li>
+              <li>Establish expectations with workgroup about the level of effort expected on the class project</li>
+            </ul>
+            <h4>Confidence in ability to finish course</h4>
+            <ul>
+              <li>Rating: 8/10</li>
+              <li>I am fairly confident that I can finish this course.</li>
+            </ul>
+          </div>     
+          <h3>Teacher-Student Contract for: Underwater Basket Weaving</h3>
+          <button type="button" class="collapsible">Click to show/hide</button>
+          <div class="content">
+            <h4>Due Dates</h4>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+            <h4>Test Dates</h4>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+            <h4>Accomomodations</h4>
+            <p>Lorem ipsum dolor sit amet. </p>
+            <h4>Recommended Resources</h4>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing. </p>
+            <h4>Potential Conflicts</h4>
+            <p>Lorem ipsum. </p>
+            <h4>Plan to Resolve Potential Conflicts</h4>
+            <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+          </div>          
+        </div>
+        <div class="col-sm-2 sidenav">        
+        </div>
+        <br>
+        <div class="footer"></div>     
+    </body>
+</html>

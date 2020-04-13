@@ -5,8 +5,6 @@ import (
 	"fmt"
 	"html/template"
 	"io/ioutil"
-	"log"
-	"mime"
 	"net/http"
 )
 
@@ -56,23 +54,13 @@ func selfQuestionHandler(w http.ResponseWriter, r *http.Request) {
 	}
 }
 
-func serveAssets(w http.ResponseWriter, req *http.Request) {
-	path := "." + req.URL.Path
-	mime.AddExtensionType(".css", "text/css; charset=utf-8")
-	mime.AddExtensionType(".js", "application/javascript; charset=utf-8")
-	log.Printf("path" + path)
-	http.FileServer(http.Dir(path))
-}
-
-// removed because path referenced all paths - both js and css
-// func serveJS(w http.ResponseWriter, req *http.Request) {
-// 	path := "./Scripts" //+ req.URL.Path
-// 	mime.AddExtensionType(".js", "application/javascript; charset=utf-8")
-// 	http.FileServer(http.Dir(path))
-// }
-
 func main() {
-	http.HandleFunc("/studentSurvey/", selfQuestionHandler)
-	http.HandleFunc("/", serveAssets)
+	assetHandle := http.FileServer(http.Dir("./Assets/"))
+	http.StripPrefix("/Assets/Styles/", http.FileServer(http.Dir("./Assets/Styles/")))
+	http.StripPrefix("/Assets/Scripts/", http.FileServer(http.Dir("./Assets/Scripts/")))
+	http.Handle("/", http.StripPrefix("/Assets/", assetHandle))
+
+	// http.HandleFunc("/studentSurvey/", selfQuestionHandler)
+
 	http.ListenAndServe(":8080", nil)
 }

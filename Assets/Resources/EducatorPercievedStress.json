@@ -1,0 +1,14 @@
+
+[
+    {"num": "1", "question":"Q1", "description":"In the last month, how often has Sandy been upset because of something that happened unexpectedly?"},
+    {"num": "2",  "question":"Q2", "description":"In the last month, how often has Sandy felt that she was unable to control the important things in her life?"},
+    {"num": "3", "question":"Q3", "description":"In the last month, how often has Sandy felt nervous and stressed?"},
+    {"num": "4", "question":"Q4", "description":"In the last month, how often has Sandy felt confident about her ability to handle her personal problems?"},
+    {"num": "5", "question":"Q5", "description":"In the last month, how often has Sandy felt that things were going her way?"},
+    {"num": "6", "question":"Q6", "description":"In the last month, how often has Sandy found that she could not cope with all the things that she had to do?"},
+    {"num": "7", "question":"Q7", "description":"In the last month, how often has Sandy been able to control irritations in her life?"},
+    {"num": "8", "question":"Q8", "description":"In the last month, how often has Sandy felt that she was on top of things?"},
+    {"num": "9", "question":"Q9", "description":"In the last month, how often has Sandy been angered because of things that happened that were outside of her control?"},
+    {"num": "10", "question":"Q10", "description":"In the last month, how often has Sandy felt difficulties were piling up so high that she could not overcome them?"}    
+]
+

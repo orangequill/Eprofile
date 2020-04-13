@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+         <link rel="stylesheet" href="/Assets/Styles/surveyStyle.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>        
+        <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+        <script type="text/javascript" src="/Assets/Scripts/charts.js"></script>
+    </head>
+    <body>        
+        <header class="navbar navbar-default">
+            <div class="container-fluid">
+              <ul class="nav navbar-nav">
+                <li>
+                    <a class="nav-link " href="/Assets/Home.html">Home</a>
+                </li>        
+                <li>
+                  <a class="nav-link" href="/Assets/emotionTracker.html">Emotion Tracker</a>
+                </li> 
+                <li class="dropdown">
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">Survey<span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                      <li><a href="/Assets/educatorSurvey.html">Educator</a></li>
+                      <li><a href="/Assets/studentSurvey.html">Student Assessment</a></li>
+                      <li><a href="/Assets/peerSurvey.html">Peer Assessment</a></li>
+                    </ul>
+                  </li>                                       
+                <li>
+                  <a class="nav-link " href="/Assets/Calendar.html">Calendar</a>
+                </li>
+                <li>
+                  <a class="nav-link" href="/Assets/Reporting.html">Reporting</a>
+                </li>
+                <li>
+                  <a class="nav-link" href="/Assets/Profile.html">Profile</a>
+                </li>
+              </ul> 
+            </div>
+        </header>
+        <div class="col-sm-2 sidenav"> 
+        </div>
+        <div>
+          
+        </div>
+        <div class="col-sm-8 text-left"> 
+            <h1>Emotion Tracker</h1>
+            <hr>     
+            <p>First Quadrant Represents High Intensity Postive Emotions. These are emotions like euphoria.</p>
+            <p>Second Quadrant Represents Low Intensity Positive Emotions. These are emotions like content.</p>
+            <p>Third Quadrant Represents Low Intensity Negative Emotions. These are emotions like frustration.</p>
+            <p>Fourth Quadrant Represents High Intensity Negative Emotions. These are emotions like rage.</p>
+            <div id="selectEmotionChart" style="height:500px;"></div>
+            <div class="col-sm-4">
+              <label for="xVal">Choose X Coordinate:</label>
+              <select id="xVal">
+                <option value="5">5</option>
+                <option value="4">4</option>
+                <option value="3">3</option>
+                <option value="2">2</option>
+                <option value="1">1</option>
+                <option value="0" selected="selected">0</option>
+                <option value="-1">-1</option>
+                <option value="-2">-2</option>
+                <option value="-3">-3</option>
+                <option value="-4">-4</option>
+                <option value="-5">-5</option>
+              </select>
+            </div>
+            <div class="col-sm-4">
+              <label for="yVal">Choose Y Coordinate:</label>
+              <select id="yVal">
+                <option value="5">5</option>
+                <option value="4">4</option>
+                <option value="3">3</option>
+                <option value="2">2</option>
+                <option value="1">1</option>
+                <option value="0" selected="selected">0</option>
+                <option value="-1">-1</option>
+                <option value="-2">-2</option>
+                <option value="-3">-3</option>
+                <option value="-4">-4</option>
+                <option value="-5">-5</option>
+              </select>
+            </div>
+            <div class="col-sm-4">
+              <textarea cols="50" rows="1"> Enter in text here...</textarea>
+            </div>
+            <div class="col-sm-12">
+              <hr>
+              <button type="button" class="btn btn-success" id="submitEmotion" style="float: right;">Click</button>
+            </div>            
+        </div>
+        <div class="col-sm-2 sidenav">        
+        </div>   
+        <div class="footer"></div>     
+    </body>
+</html>
