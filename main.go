@@ -15,6 +15,21 @@ type PSSQuestion struct {
 	Description string `json:"description"`
 }
 
+// PSSAnswer - This struct holds the PercievedStressScale json answers
+type PSSAnswer struct {
+	Idx         string `json:"num"`
+	Question    string `json:"question"`
+	Description string `json:"description"`
+}
+
+// TrackEmotion - This struct holds an emotion instance
+type TrackEmotion struct {
+	X           string `json:"x"`
+	Y           string `json:"y"`
+	Description string `json:"description"`
+	Time        string `json:"time"`
+}
+
 type message struct {
 	Message string `json:"msg"`
 }
@@ -54,11 +69,87 @@ func selfQuestionHandler(w http.ResponseWriter, r *http.Request) {
 	}
 }
 
+// func selfQuestionaireSurveyPOST(w http.ResponseWriter, r *http.Request) {
+// 	var PSSAnswers []PSSAnswer
+
+// 	switch r.Method {
+
+// 	case "POST":
+// 		if err := json.NewDecoder(r.Body).Decode(&PSSAnswers); err != nil {
+// 			http.Error(w, "boo", 500)
+// 		}
+// 	default:
+// 		http.Error(w, "Not supported method", 405)
+// 	}
+
+// 	for _, x := range PSSAnswers {
+// 		fmt.Fprint(x.Idx, x.Question, x.Description)
+// 	}
+// }
+
+// func peerQuestionaireSurveyPOST(w http.ResponseWriter, r *http.Request) {
+// 	var PSSAnswers []PSSAnswer
+
+// 	switch r.Method {
+
+// 	case "POST":
+// 		if err := json.NewDecoder(r.Body).Decode(&PSSAnswers); err != nil {
+// 			http.Error(w, "boo", 500)
+// 		}
+// 	default:
+// 		http.Error(w, "Not supported method", 405)
+// 	}
+
+// 	for _, x := range PSSAnswers {
+// 		fmt.Fprint(x.Idx, x.Question, x.Description)
+// 	}
+// }
+
+// func educatorQuestionaireSurveyPOST(w http.ResponseWriter, r *http.Request) {
+// 	var PSSAnswers []PSSAnswer
+
+// 	switch r.Method {
+
+// 	case "POST":
+// 		if err := json.NewDecoder(r.Body).Decode(&PSSAnswers); err != nil {
+// 			http.Error(w, "boo", 500)
+// 		}
+// 	default:
+// 		http.Error(w, "Not supported method", 405)
+// 	}
+
+// 	for _, x := range PSSAnswers {
+// 		fmt.Fprint(x.Idx, x.Question, x.Description)
+// 	}
+// }
+
+// func trackEmotionPOST(w http.ResponseWriter, r *http.Request) {
+// 	var TrackEmotion emo
+
+// 	switch r.Method {
+
+// 	case "POST":
+// 		if err := json.NewDecoder(r.Body).Decode(&emo); err != nil {
+// 			http.Error(w, "boo", 500)
+// 		}
+// 	default:
+// 		http.Error(w, "Not supported method", 405)
+// 	}
+
+// 	fmt.Fprint(emo.X, emo.Y, emo.Description)
+// }
+
 func main() {
+	// router := mux.NewRouter().StrictSlash(true)
+
 	assetHandle := http.FileServer(http.Dir("./Assets/"))
 	http.StripPrefix("/Assets/Styles/", http.FileServer(http.Dir("./Assets/Styles/")))
 	http.StripPrefix("/Assets/Scripts/", http.FileServer(http.Dir("./Assets/Scripts/")))
 	http.Handle("/", http.StripPrefix("/Assets/", assetHandle))
+
+	// router.HandleFunc("/Assets/studentSurvey/", selfQuestionaireSurveyPOST).Methods("POST")
+	// router.HandleFunc("/Assets/peerSurvey/", selfQuestionaireSurveyPOST).Methods("POST")
+	// router.HandleFunc("/Assets/educatorSurvey/", selfQuestionaireSurveyPOST).Methods("POST")
 
 	// http.HandleFunc("/studentSurvey/", selfQuestionHandler)
 
