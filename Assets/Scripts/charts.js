@@ -54,4 +54,55 @@ $(document).ready(function(){
             chart.draw(data, options);
         }
     }
+
 });
+
+var getQuadrant = function(x,y){
+    if(x >= 0 && y >= 0){
+        return "q1";
+    } else if(x >= 0 && y < 0){
+        return "q2";
+    } else if(x < 0 && y < 0){
+        return "q3";
+    } else{
+        return "q4";
+    }
+}
+
+function dataWrite(){
+    // getting change values
+    var date = new Date();
+    var month = date.getMonth() + 1;
+    var day = date.getDate();
+    var year = date.getFullYear();
+    var dropdownX = document.getElementById("xVal");
+    var dropdownY = document.getElementById("yVal");
+    var desc = document.getElementById("EmoDesc");
+
+    var dateVal = ""+ month + "-" + day + "-" + year;
+    var Magnitude = Math.sqrt(Math.pow(dropdownX.value, 2) + Math.pow(dropdownY.value, 2));
+
+    var quad = getQuadrant(dropdownX.value, dropdownY.value)
+
+    var jsonData = {
+        "num": 1,
+        "date" : dateVal,
+        "x" : dropdownX.value,
+        "y" : dropdownY.value,
+        "quadrant": quad,
+        "Magnitude" : Magnitude,
+        "Emotion" : desc.value
+    };
+
+    // I learned that you can't write to a file using js, but you can locally store it
+    // with that, I am basing the following code on the create element example found here
+    // https://stackoverflow.com/questions/34156282/how-do-i-save-json-to-local-text-file
+    const a = document.createElement("a");
+    a.href = URL.createObjectURL(new Blob([JSON.stringify(jsonData)], {
+      type: "text/plain"
+    }));
+    a.setAttribute("download", "quadData.txt");
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
+} 
