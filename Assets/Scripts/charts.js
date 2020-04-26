@@ -94,7 +94,7 @@ function dataWrite(){
         "Emotion" : desc.value
     };
 
-    // I learned that you can't write to a file using js, but you can locally store it
+    // I learned that you can't write to a file using js, but you can locally store it...
     // with that, I am basing the following code on the create element example found here
     // https://stackoverflow.com/questions/34156282/how-do-i-save-json-to-local-text-file
     const a = document.createElement("a");
