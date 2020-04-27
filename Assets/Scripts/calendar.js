@@ -4,6 +4,7 @@
     var month = today.getMonth();
     var daysInMonth = new Date(year, month + 1, 0).getDate();
 
+
     function showCalendar(month, year){
         let firstDay = new Date(year, month).getDay();
         let nextMonth = false;
@@ -73,7 +74,7 @@ function previousMonth(){
 
 
 function nextMonth(){
-    
+
     if(month == 12){
         month = 1;
     }
